@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Savings and investments</h1>
+      <p>The amount of money you have affects how much financial assistance we might give you. When we ask how much capital you have, we mean the total value of your savings and investments:</p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Savings
+          </span>
+        </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Bank current accounts</li>
+              <li>Building society accounts</li>
+              <li>Deposit accounts or special investment accounts. This includes money held in the National Savings Bank, Girobank, and Trustee Savings Bank</li>
+              <li>ISAs</li>
+              <li>SAYE schemes</li>
+              <li>Unit trusts</li>
+              <li>Post Office Card Accounts (Watch this video for guidance on adding information about Post Office Card Accounts)</li>
+              <li>Co-operatives share accounts</li>
+              <li>Cash</li>
+            </ul>
+          </div>
+      </details>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Investments
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>National Savings Certificates and Ulster Savings Certificates</li>
+            <li>Premium Bonds</li>
+            <li>Stocks and Shares</li>
+            <li>Capital held by the Court of Protection or a Deputy appointed by that Court</li>
+            <li>Trust Funds</li>
+          </ul>
+        </div>
+      </details>
+
+
+      <form class="form" action="/url/of/next/page" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "how-much-capital-do-you-have",
+  name: "how-much-capital-do-you-have",
+  fieldset: {
+    legend: {
+      text: "How much capital do you have?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "0-14250",
+      text: "Between £0 and £14,250"
+    },
+    {
+      value: "14251-23250",
+      text: "Between £14,250 and £23,250"
+    },
+    {
+      value: "23250+",
+      text: "More than £23,250"
+    }
+  ]
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
