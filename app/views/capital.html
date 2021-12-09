@@ -14,8 +14,8 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">Savings and investments</h1>
-      
-      <form class="form" action="/url/of/next/page" method="post">
+
+      <form class="form" action="/check-answers" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -31,16 +31,19 @@
   },
   items: [
     {
-      value: "0-14250",
-      text: "Between £0 and £14,250"
+      value: "Between £0 and £14,250",
+      text: "Between £0 and £14,250",
+      checked: checked("how-much-capital-do-you-have", "Between £0 and £14,250")
     },
     {
-      value: "14251-23250",
-      text: "Between £14,250 and £23,250"
+      value: "Between £14,250 and £23,250",
+      text: "Between £14,250 and £23,250",
+      checked: checked("how-much-capital-do-you-have", "Between £14,250 and £23,250")
     },
     {
-      value: "23250+",
-      text: "More than £23,250"
+      value: "More than £23,250",
+      text: "More than £23,250",
+      checked: checked("how-much-capital-do-you-have", "More than £23,250")
     }
   ]
 }) }}
