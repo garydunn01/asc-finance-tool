@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <h2 class="govuk-heading-m">Financial details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How much capital do you have?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['how-much-capital-do-you-have'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/capital">
+              Change
+              <span class="govuk-visually-hidden"> amount of capital</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">Eligible for financial support</h1>
+            <div class="govuk-panel__body">
+              You will have to pay a contribution to the cost of your care, but only from your income
+            </div>
+          </div>
+
+          <h2 class="govuk-heading-m">What happens next</h2>
+          
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <h2 class="govuk-heading-m">Financial details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How much capital do you have?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['how-much-capital-do-you-have'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/capital">
+              Change
+              <span class="govuk-visually-hidden"> amount of capital</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Not eligible for financial support</h1>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>We've sent your application to Hackney Electoral Register Office.</p>
+      <p>They will contact you either to confirm your registration, or to ask for more information.</p>
+      <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
