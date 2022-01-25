@@ -1,4 +1,12 @@
 {% extends "layout.html" %}
+{% block pageScripts %}
+  <script src="/public/javascripts/step-by-step-nav.js"></script>
+  <script type="text/javascript">
+    var $element = $('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+    stepByStepNavigation.start($element)
+  </script>
+{% endblock %}
 
 {% block pageTitle %}
   Check your answers
@@ -42,6 +50,166 @@
               You will have to pay a contribution to the cost of your care, but only from your income
             </div>
           </div>
+          <h2 class="govuk-heading-m">How do we work out how much your contribution will be?</h2>
+          <p>We follow a simple 4 step process.</p>
+          <p><strong>Example</strong></p>
+          <p>Mr. Jenkins is 72 and lives on his own. He receives a home support service arranged through the council. The cost of his service is <strong>£55.00 per week</strong></p>
+
+          <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+            <ol class="app-step-nav__steps">
+              <li class="app-step-nav__step js-step" id="add-income-together" >
+                <div class="app-step-nav__header js-toggle-panel" data-position="1">
+                  <h2 class="app-step-nav__title">
+                    <span class="app-step-nav__circle app-step-nav__circle--number">
+                      <span class="app-step-nav__circle-inner">
+                        <span class="app-step-nav__circle-background">
+                          <span class="govuk-visually-hidden">Step</span> 1
+                        </span>
+                      </span>
+                    </span>
+
+                    <span class="js-step-title">
+                      Add together all of your different income
+                    </span>
+                  </h2>
+                </div>
+
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-together-1">
+                  <p class="app-step-nav__paragraph">List the different sources of income. Here is an example:</p>
+
+                  <ol class="app-step-nav__list " data-length="7">
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p><strong>Income</strong></p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£125.00 per week - State Retirement Pension</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£45.00 per week - British Steel Pension</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£85.60 per week - Attendance Allowance (High Rate)</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£57.30 per week - Pension Credit (Guarantee Credit)</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£13.40 per week - Pension Credit (Savings Credit)</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p><strong>£326.30 per week - Total Weekly Income</strong></p>
+                    </li>
+                  </ol>
+                </div>
+
+              </li>
+
+              <li class="app-step-nav__step js-step" id="add-income-not-included" >
+                <div class="app-step-nav__header js-toggle-panel" data-position="2">
+                  <h2 class="app-step-nav__title">
+                    <span class="app-step-nav__circle app-step-nav__circle--number">
+                      <span class="app-step-nav__circle-inner">
+                        <span class="app-step-nav__circle-background">
+                          <span class="govuk-visually-hidden">Step</span> 2
+                        </span>
+                      </span>
+                    </span>
+
+                    <span class="js-step-title">
+                      Add up any income we don't count
+                    </span>
+                  </h2>
+                </div>
+
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-not-included-2">
+                  <p class="app-step-nav__paragraph">There are some things we exclude, for example:</p>
+                  <ol class="app-step-nav__list " data-length="6">
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p><strong>Discounts and allowances</strong></p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£13.40 per week - Pension Credit (Savings Credit)</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£28.30 per week - Attendance Allowance</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£7.05 per week - Disability Related Expenditure</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£203.75 per week - Income Support +25%</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p><strong>£252.50 per week - Total Weekly Discounts and allowances</strong></p>
+                    </li>
+                  </ol>
+                </div>
+
+              </li>
+
+              <li class="app-step-nav__step js-step" id="total-assessed-income" >
+                <div class="app-step-nav__header js-toggle-panel" data-position="3">
+                  <h2 class="app-step-nav__title">
+                    <span class="app-step-nav__circle app-step-nav__circle--number">
+                      <span class="app-step-nav__circle-inner">
+                        <span class="app-step-nav__circle-background">
+                          <span class="govuk-visually-hidden">Step</span> 3
+                        </span>
+                      </span>
+                    </span>
+
+                    <span class="js-step-title">
+                      Calculate total income that can be used for contributions
+                    </span>
+                  </h2>
+                </div>
+
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-total-assessed-income-3">
+                  <p class="app-step-nav__paragraph">Take the total weekly discounts and allowances from the total weekly income.</p>
+
+                  <ol class="app-step-nav__list " data-length="3">
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£326.30 per week - Total Weekly Income</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>-£252.50 per week - Total Weekly Discounts and allowances</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p><strong>£73.80 per week - Weekly contribution</strong></p>
+                    </li>
+                  </ol>
+                </div>
+
+              </li>
+
+              <li class="app-step-nav__step js-step" id="compare-contribution-amount-with-total-cost" >
+                <div class="app-step-nav__header js-toggle-panel" data-position="5">
+                  <h2 class="app-step-nav__title">
+                    <span class="app-step-nav__circle app-step-nav__circle--number">
+                      <span class="app-step-nav__circle-inner">
+                        <span class="app-step-nav__circle-background">
+                          <span class="govuk-visually-hidden">Step</span> 4
+                        </span>
+                      </span>
+                    </span>
+
+                    <span class="js-step-title">
+                      Compare the assessed income with the total cost of care
+                    </span>
+                  </h2>
+                </div>
+
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-compare-contribution-amount-with-total-cost-4">
+                  <p class="app-step-nav__paragraph">We then compare the total assessed income (£73.80), with the total cost of services (£55.00). Mr. Jenkins would pay whichever amount is lower.</p>
+                  <p>If Mr. Jenkins cost of services was to increase in the future, he would pay no more than £73.80 per week in contributions.</p>
+                </div>
+
+              </li>
+
+
+            </ol>
+          </div>
+
 
           <h2 class="govuk-heading-m">What happens next</h2>
           <p>To get financial support for care costs you will need to complete a financial assessment. We will ask about your savings, investments, property and income. You will need to provide evidence.</p>
