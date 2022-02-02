@@ -1,9 +1,4 @@
 {% extends "layout_unbranded.html" %}
-
-{% block pageTitle %}
-  Check your answers
-{% endblock %}
-
 {% block pageScripts %}
   <script src="/public/javascripts/step-by-step-nav.js"></script>
   <script type="text/javascript">
@@ -11,6 +6,10 @@
     var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
     stepByStepNavigation.start($element)
   </script>
+{% endblock %}
+
+{% block pageTitle %}
+  Check your answers
 {% endblock %}
 
 {% block beforeContent %}
@@ -60,23 +59,15 @@
         <div class="govuk-grid-column-full">
 
           <div class="govuk-panel govuk-panel--confirmation">
-            <h1 class="govuk-panel__title">Eligible for some financial support</h1>
+            <h1 class="govuk-panel__title">Eligible for financial support</h1>
             <div class="govuk-panel__body">
-              You will have to pay a contribution to the cost of your care from your income, plus an extra amount depending on your capital
+              You will have to pay a contribution to the cost of your care, but only from your income
             </div>
           </div>
           <h2 class="govuk-heading-m">How do we work out how much your contribution will be?</h2>
           <p>We follow a simple 4 step process.</p>
           <p><strong>Example</strong></p>
-          <p>Miss Green is 83 she lives on her own. She receives a direct payment of £180.00 per week from the council. She has the following capital and savings:</p>
-          <p>£15,000 - Lloyds bank accounts</p>
-          <p>£3,500 - Post Office Account</p>
-          <p><strong>£18,500 - Total Capital</strong></p>
-          <p>As Miss Green has capital over £14,250, capital tariff of £1 for every £250 of capital over £14,250 will be
-included as part of her income, calculated as follows:</p>
-<p>£18,500 - £14,250 = £4,250</p>
-<p>£4,250 / £250 = £17.00.</p>
-<p>Miss Green incurs capital tariff of £17.00 per week.</p>
+          <p>Mrs. Smith is 57 and lives on her own. She is currently residing in long term residential care at East Dene Care Village. The cost of her service is <strong>£483.00 per week</strong> and she does not own a property.</p>
 
           <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
             <ol class="app-step-nav__steps">
@@ -105,22 +96,10 @@ included as part of her income, calculated as follows:</p>
                       <p><strong>Income</strong></p>
                     </li>
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p>£147.00 per week - State Retirement Pension</p>
+                      <p>£127.15 per week - Employment Support Allowance</p>
                     </li>
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p>£13.02 per week - British Steel Pension</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£48.00 per week - Co-op Pension</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£57.30 per week - Attendance Allowance (Low rate)</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£17.00 per week - Capital Tariff (as calculated above)</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>£282.32 per week - Total Weekly Income</strong></p>
+                      <p><strong>£127.15 per week - Total Weekly Income</strong></p>
                     </li>
                   </ol>
                 </div>
@@ -151,16 +130,10 @@ included as part of her income, calculated as follows:</p>
                       <p><strong>Discounts and allowances</strong></p>
                     </li>
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p>£21.60 per week - Housing Related Expenditure</p>
+                      <p>£24.90 per week - Personal Expenses Allowance</p>
                     </li>
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p>£3.00 per week - Disability Related Expenditure</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£203.75 per week - Income Support +25%</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>£228.35 per week - Total Weekly Discounts and allowances</strong></p>
+                      <p><strong>£24.90 per week - Total Weekly Discounts and allowances</strong></p>
                     </li>
                   </ol>
                 </div>
@@ -189,13 +162,13 @@ included as part of her income, calculated as follows:</p>
 
                   <ol class="app-step-nav__list " data-length="3">
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p>£282.32 per week - Total Weekly Income</p>
+                      <p>£127.15 per week - Total Weekly Income</p>
                     </li>
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p>-£228.35 per week - Total Weekly Discounts and allowances</p>
+                      <p>-£24.90 per week - Total Weekly Discounts and allowances</p>
                     </li>
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>£53.97 per week - Weekly contribution</strong></p>
+                      <p><strong>£102.25 per week - Weekly contribution</strong></p>
                     </li>
                   </ol>
                 </div>
@@ -220,8 +193,8 @@ included as part of her income, calculated as follows:</p>
                 </div>
 
                 <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-compare-contribution-amount-with-total-cost-4">
-                  <p class="app-step-nav__paragraph">We then compare the total assessed income (£53.97 per week), with the total cost of services (£180.00 per week). Miss. Green would pay whichever amount is lower.</p>
-                  <p>She will pay <strong>£53.97 per week</strong> toward the cost of her care. The council will pay the remaining cost of her service of £126.03 directly to Miss Green.</p>
+                  <p class="app-step-nav__paragraph">We then compare the total assessed income (£102.25), with the total cost of services (£483.00). Mrs. Smith would pay whichever amount is lower.</p>
+                  <p>She will pay <strong>£102.25 per week</strong>.</p>
                 </div>
 
               </li>
@@ -229,6 +202,8 @@ included as part of her income, calculated as follows:</p>
 
             </ol>
           </div>
+
+
           <h2 class="govuk-heading-m">What happens next</h2>
           <p>If you are having, or have already had a Care Assessment and want to know exactly how much you will pay for services or you want to apply for financial support, you can use the BetterCare tool to complete a Financial Assessment.</p>
           <p>

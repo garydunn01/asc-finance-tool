@@ -1,0 +1,58 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Type of care</h1>
+
+      <form class="form" action="/capital" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+              idPrefix: "what-type-of-care",
+              name: "what-type-of-care",
+              fieldset: {
+                legend: {
+                  text: "What type of care is needed?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Care at home",
+                  text: "Care at home",
+                  checked: checked("what-type-of-care", "Care at home")
+                },
+                {
+                  value: "Residential care home",
+                  text: "Residential care home",
+                  checked: checked("what-type-of-care", "Residential care home")
+                },
+                {
+                  value: "Nursing home",
+                  text: "Nursing home",
+                  checked: checked("what-type-of-care", "Nursing home")
+                }
+              ]
+            }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
