@@ -61,6 +61,14 @@
             <p>As a self-funder of care services, you are free to make any arrangements you choose and pay the providers directly.</p>
             <p>If you would like to get some assistance in finding suitable service providers, please contact the Adult Services Access Team on 01724 297000.</p>
             <p>When your savings and investments reduce to less than £23,250 you will qualify for financial support. To apply for financial support you will need to complete a Financial Assessment form. We recommend you apply slightly before your capital falls below £23,250 to allow time for your application to be processed.</p>
+            {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+              {{ govukWarningText({
+                  text: "Deprivation of capital or assets",
+                  iconFallbackText: "Warning"
+                }) }}
+            <p>If you give away large sums of your savings to friends or relatives, or transfer your assets (e.g. your property) to put yourself in a more favourable position to get local authority funding for your care and support services, the local authority may be able to financially assess you as if you still have the savings or assets.</p>
+            <p>Statutory guidance allows the local authority to consider whether you have deprived yourself of a capital asset in order to either reduce your care and support costs, or approach the local authority for funding. If deprivation has occurred, the local authority will treat you as still possessing the capital asset. This is called Notional Capital.</p>
+            <a href="https://www.ageuk.org.uk/information-advice/care/paying-for-care/paying-for-a-care-home/deprivation-of-assets/" target="blank">AgeUK Deprivation of Assets guidance</a>
         </div>
       </div>
 
