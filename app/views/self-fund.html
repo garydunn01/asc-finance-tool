@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout_unbranded.html" %}
 
 {% block pageTitle %}
   Check your answers
@@ -69,9 +69,21 @@
             <p>If you give away large sums of your savings to friends or relatives, or transfer your assets (e.g. your property) to put yourself in a more favourable position to get local authority funding for your care and support services, the local authority may be able to financially assess you as if you still have the savings or assets.</p>
             <p>Statutory guidance allows the local authority to consider whether you have deprived yourself of a capital asset in order to either reduce your care and support costs, or approach the local authority for funding. If deprivation has occurred, the local authority will treat you as still possessing the capital asset. This is called Notional Capital.</p>
             <a href="https://www.ageuk.org.uk/information-advice/care/paying-for-care/paying-for-a-care-home/deprivation-of-assets/" target="blank">AgeUK Deprivation of Assets guidance</a>
+          </div>
         </div>
-      </div>
 
     </div>
   </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body govuk-!-margin-bottom-9"></p>
+      <p class="govuk-body govuk-!-margin-bottom-5">Thanks! This is the end of the prototype tool. Please let us know what you think about it.</p>
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Go to feedback form",
+      href: "https://forms.office.com/Pages/ResponsePage.aspx?id=7VVmWP8siUCBl7TBC3s9o3IJ7tcJddtNjuRoxI6nkllUN0tZTTdQWlRJRE1UQ1owMEE4NEtGS0swWiQlQCN0PWcu"
+    })
+  }}
+</div>
+</div>
 {% endblock %}
