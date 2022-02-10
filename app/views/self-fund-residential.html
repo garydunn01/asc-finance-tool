@@ -19,20 +19,6 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            How much capital do you have?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['how-much-capital-do-you-have'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/capital">
-              Change
-              <span class="govuk-visually-hidden"> amount of capital</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
             What type of care is needed?
           </dt>
           <dd class="govuk-summary-list__value">
@@ -42,6 +28,34 @@
             <a href="/care-type">
               Change
               <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you own your own home?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['home-ownership'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/property">
+              Change
+              <span class="govuk-visually-hidden"> amount of capital</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How much capital do you have?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['how-much-capital-do-you-have'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/capital">
+              Change
+              <span class="govuk-visually-hidden"> amount of capital</span>
             </a>
           </dd>
         </div>

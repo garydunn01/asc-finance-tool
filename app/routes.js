@@ -52,10 +52,10 @@ router.post('/care-type-answers', function (req, res) {
     // Make a variable and give it the value from 'property'
     var owners = req.session.data['home-ownership']
     // Check whether the variable matches a condition
-    if (owners == "yes"){
+    if (owners == "Yes"){
       // Send user to self-fund-homeowner.html
       res.redirect('/self-fund-homeowner')
-    } else if (owners == "no"){
+    } else if (owners == "No"){
       // Send user to /capital.html
       res.redirect('/capital')
     }
