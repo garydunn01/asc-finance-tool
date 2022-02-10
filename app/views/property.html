@@ -13,32 +13,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Type of care</h1>
+      <h1 class="govuk-heading-xl">Property ownership</h1>
 
-      <form class="form" action="/care-type-answers" method="post">
+      <form class="form" action="/property-answers" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
             {{ govukRadios({
-              idPrefix: "what-type-of-care",
-              name: "what-type-of-care",
+              idPrefix: "home-ownership",
+              name: "home-ownership",
               fieldset: {
                 legend: {
-                  text: "What type of care is needed?",
+                  text: "Do you own your home?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--l"
                 }
               },
               items: [
                 {
-                  value: "Care at home",
-                  text: "Care at home",
-                  checked: checked("what-type-of-care", "Care at home")
+                  value: "yes",
+                  text: "Yes",
+                  checked: checked("home-ownership", "yes")
                 },
                 {
-                  value: "Residential care/Nursing home",
-                  text: "Residential care/Nursing home",
-                  checked: checked("what-type-of-care", "Residential care/Nursing home")
+                  value: "no",
+                  text: "No",
+                  checked: checked("home-ownership", "no")
                 }
               ]
             }) }}
