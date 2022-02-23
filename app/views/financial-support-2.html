@@ -1,9 +1,4 @@
 {% extends "layout_unbranded.html" %}
-
-{% block pageTitle %}
-  Check your answers
-{% endblock %}
-
 {% block pageScripts %}
   <script src="/public/javascripts/step-by-step-nav.js"></script>
   <script type="text/javascript">
@@ -11,6 +6,10 @@
     var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
     stepByStepNavigation.start($element)
   </script>
+{% endblock %}
+
+{% block pageTitle %}
+  Check your answers
 {% endblock %}
 
 {% block beforeContent %}
@@ -41,54 +40,31 @@
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Do you own your own home?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['home-ownership'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/property">
-              Change
-              <span class="govuk-visually-hidden"> amount of capital</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            How much capital do you have?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['how-much-capital-do-you-have'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/capital">
-              Change
-              <span class="govuk-visually-hidden"> amount of capital</span>
-            </a>
-          </dd>
-        </div>
+            <dt class="govuk-summary-list__key">
+              How much capital do you have?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['how-much-capital-do-you-have'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/capital">
+                Change
+                <span class="govuk-visually-hidden"> amount of capital</span>
+              </a>
+            </dd>
+          </div>
       </dl>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
 
           <div class="govuk-panel govuk-panel--confirmation">
-            <h1 class="govuk-panel__title">Eligible for some financial support</h1>
+            <h1 class="govuk-panel__title">Eligible for financial support</h1>
             <div class="govuk-panel__body">
-              You will have to pay a contribution to the cost of your care from your income, plus an extra amount depending on your capital
+              You will have to pay a contribution to the cost of your care, but only from your income
             </div>
           </div>
           <h2 class="govuk-heading-m">How do we work out how much your contribution will be?</h2>
-          <p>We follow a simple 4 step process.</p>
-          <p><strong>Example</strong></p>
-          <p>Mr. Jones is 88 and is currently residing in short term residential care at The Cottage Care Home. The cost of his service is £489.00 per week. He has the following capital and savings:</p>
-          <p>£19,500 - Natwest bank accounts</p>
-          <p><strong>£19,500 - Total Capital</strong></p>
-          <p>As Mr Jones has capital over £14,250, capital tariff of £1 for every £250 of capital over £14,250 will be included as part of his income, calculated as follows:</p>
-<p>£19,500 - £14,250 = £5,250</p>
-<p>£4,250 / £250 = £21.00.</p>
-<p>Mr. Jones incurs capital tariff of £21.00 per week.</p>
 
           <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
             <ol class="app-step-nav__steps">
@@ -110,28 +86,33 @@
                 </div>
 
                 <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-together-1">
-                  <p class="app-step-nav__paragraph">List the different sources of income. Here is an example:</p>
-
-                  <ol class="app-step-nav__list " data-length="7">
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>Income</strong></p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£125.00 per week - State Retirement Pension</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£17.00 per week - Pension Credit (Guarantee Credit)</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£3.20 per week - Pension Credit (Savings Credit)</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><i>£21.00 per week - Capital Tariff (as calculated above)</i></p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>£166.20 per week - Total Weekly Income</strong></p>
-                    </li>
-                  </ol>
+                  <p class="app-step-nav__paragraph">Many people only have one source of income, such as their State Pension, but if you have other sources of income we will take them into account.</p>
+                  <p class="app-step-nav__paragraph">These may include:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>state pension</li>
+                    <li>wages/salary</li>
+                    <li>private/work pensions</li>
+                    <li>rental income from tenants and boarders</li>
+                    <li>maintenance payments from a spouse/partner</li>
+                  </ul>
+                  <p class="app-step-nav__paragraph">Income from benefits is usually included. We may ask you to apply for benefits to which you are entitled but have not yet claimed, to reduce the burden on council budgets.</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Attendance Allowance, including Constant Attendance Allowance and Exceptionally Severe Disablement Allowance</li>
+                    <li>Bereavement Support Payment (has replaced Bereavement Allowance, previously Widow’s Pension)</li>
+                    <li>Carer's Allowance</li>
+                    <li>Child Tax Credit</li>
+                    <li>Child Benefit</li>
+                    <li>Disability Living Allowance (Care component)</li>
+                    <li>Employment and Support Allowance, or the benefits this replaces such as Severe Disablement Allowance and Incapacity Benefit</li>
+                    <li>Income Support</li>
+                    <li>Industrial Injuries Disablement Benefit or equivalent benefits</li>
+                    <li>Jobseeker’s Allowance</li>
+                    <li>Maternity Allowance</li>
+                    <li>Pension Credit</li>
+                    <li>Personal Independence Payment (Daily Living component)</li>
+                    <li>Universal Credit</li>
+                    <li>Working Tax Credit</li>
+                  </ul>
                 </div>
 
               </li>
@@ -148,32 +129,58 @@
                     </span>
 
                     <span class="js-step-title">
-                      Add up any income we don't count
+                      Take away allowances and discounts
                     </span>
                   </h2>
                 </div>
 
                 <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-not-included-2">
                   <p class="app-step-nav__paragraph">There are some things we exclude, for example:</p>
+                  <h3>Household Expenditure Costs</h3>
+                  <ul class="govuk-list govuk-list--bullet">
                   <ol class="app-step-nav__list " data-length="6">
+
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>Discounts and allowances</strong></p>
+                      <p>£13.40 per week - Pension Credit (Savings Credit)</p>
                     </li>
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p>£24.90 per week - Personal Expenses Allowance</p>
+                      <p>£28.30 per week - Attendance Allowance</p>
                     </li>
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p>£3.20 per week - Pension Credit (Savings Credit)</p>
+                      <p>£7.05 per week - Disability Related Expenditure</p>
                     </li>
                     <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>£28.10 per week - Total Weekly Discounts and allowances</strong></p>
+                      <p>£203.75 per week - Income Support +25%</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p><strong>£252.50 per week - Total Weekly Discounts and allowances</strong></p>
+                    </li>
+                  </ol>
+                  <h3>Discounts and allowances</h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <ol class="app-step-nav__list " data-length="6">
+
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£13.40 per week - Pension Credit (Savings Credit)</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£28.30 per week - Attendance Allowance</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£7.05 per week - Disability Related Expenditure</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p>£203.75 per week - Income Support +25%</p>
+                    </li>
+                    <li class="app-step-nav__list-item js-list-item ">
+                      <p><strong>£252.50 per week - Total Weekly Discounts and allowances</strong></p>
                     </li>
                   </ol>
                 </div>
 
               </li>
 
-              <li class="app-step-nav__step js-step" id="total-assessed-income" >
+              <li class="app-step-nav__step js-step" id="compare-contribution-amount-with-total-cost" >
                 <div class="app-step-nav__header js-toggle-panel" data-position="3">
                   <h2 class="app-step-nav__title">
                     <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -185,49 +192,14 @@
                     </span>
 
                     <span class="js-step-title">
-                      Calculate total income that can be used for contributions
-                    </span>
-                  </h2>
-                </div>
-
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-total-assessed-income-3">
-                  <p class="app-step-nav__paragraph">Take the total weekly discounts and allowances from the total weekly income.</p>
-
-                  <ol class="app-step-nav__list " data-length="3">
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£166.20 per week - Total Weekly Income</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>-£28.10 per week - Total Weekly Discounts and allowances</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>£138.10 per week - Weekly contribution</strong></p>
-                    </li>
-                  </ol>
-                </div>
-
-              </li>
-
-              <li class="app-step-nav__step js-step" id="compare-contribution-amount-with-total-cost" >
-                <div class="app-step-nav__header js-toggle-panel" data-position="5">
-                  <h2 class="app-step-nav__title">
-                    <span class="app-step-nav__circle app-step-nav__circle--number">
-                      <span class="app-step-nav__circle-inner">
-                        <span class="app-step-nav__circle-background">
-                          <span class="govuk-visually-hidden">Step</span> 4
-                        </span>
-                      </span>
-                    </span>
-
-                    <span class="js-step-title">
                       Compare the assessed income with the total cost of care
                     </span>
                   </h2>
                 </div>
 
                 <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-compare-contribution-amount-with-total-cost-4">
-                  <p class="app-step-nav__paragraph">We then compare the total assessed income (£138.10 per week), with the total cost of services (£489.00 per week). Mr. Jones would pay whichever amount is lower.</p>
-                  <p>He will pay <strong>£138.10 per week</strong> toward the cost of his care.</p>
+                  <p class="app-step-nav__paragraph">We then compare the total assessed income (£73.80), with the total cost of services (£55.00). Mr. Jenkins would pay whichever amount is lower.</p>
+                  <p>He will pay <strong>£55.00 per week</strong>, but if the cost of Mr. Jenkins services was to increase in the future, he would pay no more than £73.80 per week in contributions.</p>
                 </div>
 
               </li>
@@ -235,6 +207,8 @@
 
             </ol>
           </div>
+
+
           <h2 class="govuk-heading-m">What happens next</h2>
           <p>If you are having, or have already had a Care Assessment and want to know exactly how much you will pay for services or you want to apply for financial support, you can use the BetterCare tool to complete a Financial Assessment.</p>
           <p>
