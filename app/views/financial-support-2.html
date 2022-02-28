@@ -1,4 +1,9 @@
 {% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
 {% block pageScripts %}
   <script src="/public/javascripts/step-by-step-nav.js"></script>
   <script type="text/javascript">
@@ -6,10 +11,6 @@
     var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
     stepByStepNavigation.start($element)
   </script>
-{% endblock %}
-
-{% block pageTitle %}
-  Check your answers
 {% endblock %}
 
 {% block beforeContent %}
@@ -40,32 +41,50 @@
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              How much capital do you have?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['how-much-capital-do-you-have'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="/capital">
-                Change
-                <span class="govuk-visually-hidden"> amount of capital</span>
-              </a>
-            </dd>
-          </div>
+          <dt class="govuk-summary-list__key">
+            Do you own your own home?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['home-ownership'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/property">
+              Change
+              <span class="govuk-visually-hidden"> amount of capital</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How much capital do you have?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['how-much-capital-do-you-have'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/capital">
+              Change
+              <span class="govuk-visually-hidden"> amount of capital</span>
+            </a>
+          </dd>
+        </div>
       </dl>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
 
           <div class="govuk-panel govuk-panel--confirmation">
-            <h1 class="govuk-panel__title">Eligible for financial support</h1>
+            <h1 class="govuk-panel__title">Eligible for some financial support</h1>
             <div class="govuk-panel__body">
-              You will have to pay a contribution to the cost of your care, but only from your income
+              You will have to pay a contribution to the cost of your care from your income, plus an extra amount depending on your capital
             </div>
           </div>
+          <p>The extra amount of contributions you would pay is called a Tariff Amount. It applies at a rate of £1 for every £250 you have between £14,250 and £23,250, so could be between £1 and £36 per week.</p>
+          <p>For example, if you have £19,500 in capital:</p>
+          <p>£19,500 - £14,250 = £5,250</p>
+          <p>£5,250 / £250 = £21 per week</p>
           <h2 class="govuk-heading-m">How do we work out how much your contribution will be?</h2>
-          <p>As a general overview, we follow a 3 step process:</p>
+            <p>We follow a simple 4 step process.</p>
 
           <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
             <ol class="app-step-nav__steps">
@@ -86,10 +105,11 @@
                   </h2>
                 </div>
 
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-not-included-2">
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-together-1">
                   <p class="app-step-nav__paragraph">Many people only have one source of income, such as their State Pension, but if you have other sources of income we will take them into account.</p>
                   <p>These may include:
                   <ul class="govuk-list govuk-list--bullet">
+                    <li class="app-step-nav__list-item js-list-item ">tariff amount (depending on amount of capital beween £14,250 and £23,250)</li>
                     <li class="app-step-nav__list-item js-list-item ">state pension</li>
                     <li class="app-step-nav__list-item js-list-item ">wages/salary</li>
                     <li class="app-step-nav__list-item js-list-item ">private/work pensions</li>
@@ -97,7 +117,7 @@
                     <li class="app-step-nav__list-item js-list-item ">maintenance payments from a spouse/partner</li>
                   </ul>
                   </p>
-                  <p>Income from benefits is usually included. We may ask you to apply for benefits to which you are entitled but have not yet claimed, to reduce the burden on council budgets.
+                  <p>Income from benefits is usually included:
                   <ul class="govuk-list govuk-list--bullet">
                     <li class="app-step-nav__list-item js-list-item ">Attendance Allowance, including Constant Attendance Allowance and Exceptionally Severe Disablement Allowance</li>
                     <li class="app-step-nav__list-item js-list-item ">Bereavement Support Payment (has replaced Bereavement Allowance, previously Widow’s Pension)</li>
@@ -116,6 +136,7 @@
                     <li class="app-step-nav__list-item js-list-item ">Working Tax Credit</li>
                   </ul>
                   </p>
+                  <p>We may ask you to apply for benefits to which you are entitled but have not yet claimed, to reduce the burden on council budgets.</p>
                 </div>
 
               </li>
@@ -132,12 +153,12 @@
                     </span>
 
                     <span class="js-step-title">
-                      Take away allowances and discounts
+                      Add up any income we don't count
                     </span>
                   </h2>
                 </div>
 
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-atake-away-allowances-and-discounts-3">
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-not-included-2">
                   <p class="app-step-nav__paragraph">There are some things we exclude, for example:</p>
                   <ul class="govuk-list govuk-list--bullet">
                     <li class="app-step-nav__list-item js-list-item ">Pension credit (savings credit)</li>
@@ -148,8 +169,10 @@
                   </ul>
                 </div>
 
+              </li>
+
               <li class="app-step-nav__step js-step" id="compare-contribution-amount-with-total-cost" >
-                <div class="app-step-nav__header js-toggle-panel" data-position="3">
+                <div class="app-step-nav__header js-toggle-panel" data-position="5">
                   <h2 class="app-step-nav__title">
                     <span class="app-step-nav__circle app-step-nav__circle--number">
                       <span class="app-step-nav__circle-inner">
@@ -165,19 +188,16 @@
                   </h2>
                 </div>
 
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-compare-contribution-amount-with-total-cost-3">
-                  <p class="app-step-nav__paragraph">Your total income (Step 1), less any of the things we exclude (Step 2), is your Assessed Maximum Contribution.</p>
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-compare-contribution-amount-with-total-cost-4">
+                  <p class="app-step-nav__paragraph">Your total income (1), less any of the things we exclude (2), is your Assessed Maximum Contribution.</p>
                   <p class="app-step-nav__paragraph">You will not be asked to pay more than your Assessed Maximum Contribution. If the cost of your care is less than your Assessed Maximum Contribution, you will pay the lower amount.</p>
                 </div>
-
 
               </li>
 
 
             </ol>
           </div>
-
-
           <h2 class="govuk-heading-m">What happens next</h2>
           <p>If you are having, or have already had a Care Assessment and want to know exactly how much you will pay for services or you want to apply for financial support, you can use the BetterCare tool to complete a Financial Assessment.</p>
           <p>
