@@ -79,9 +79,7 @@
             </div>
           </div>
           <h2 class="govuk-heading-m">How do we work out how much your contribution will be?</h2>
-          <p>We follow a simple 4 step process.</p>
-          <p><strong>Example</strong></p>
-          <p>Mrs. Smith is 57 and lives on her own. She is currently residing in long term residential care at East Dene Care Village. The cost of her service is <strong>£483.00 per week</strong> and she does not own a property.</p>
+          <p>As a general overview, we follow a 3 step process:</p>
 
           <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
             <ol class="app-step-nav__steps">
@@ -102,20 +100,37 @@
                   </h2>
                 </div>
 
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-together-1">
-                  <p class="app-step-nav__paragraph">List the different sources of income. Here is an example:</p>
-
-                  <ol class="app-step-nav__list " data-length="7">
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>Income</strong></p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£127.15 per week - Employment Support Allowance</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>£127.15 per week - Total Weekly Income</strong></p>
-                    </li>
-                  </ol>
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-not-included-2">
+                  <p class="app-step-nav__paragraph">Many people only have one source of income, such as their State Pension, but if you have other sources of income we will take them into account.</p>
+                  <p>These may include:
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li class="app-step-nav__list-item js-list-item ">state pension</li>
+                    <li class="app-step-nav__list-item js-list-item ">wages/salary</li>
+                    <li class="app-step-nav__list-item js-list-item ">private/work pensions</li>
+                    <li class="app-step-nav__list-item js-list-item ">rental income from tenants and boarders</li>
+                    <li class="app-step-nav__list-item js-list-item ">maintenance payments from a spouse/partner</li>
+                  </ul>
+                  </p>
+                  <p>Income from benefits is usually included:
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li class="app-step-nav__list-item js-list-item ">Attendance Allowance, including Constant Attendance Allowance and Exceptionally Severe Disablement Allowance</li>
+                    <li class="app-step-nav__list-item js-list-item ">Bereavement Support Payment (has replaced Bereavement Allowance, previously Widow’s Pension)</li>
+                    <li class="app-step-nav__list-item js-list-item ">Carer's Allowance</li>
+                    <li class="app-step-nav__list-item js-list-item ">Child Tax Credit</li>
+                    <li class="app-step-nav__list-item js-list-item ">Child Benefit</li>
+                    <li class="app-step-nav__list-item js-list-item ">Disability Living Allowance (Care component)</li>
+                    <li class="app-step-nav__list-item js-list-item ">Employment and Support Allowance, or the benefits this replaces such as Severe Disablement Allowance and Incapacity Benefit</li>
+                    <li class="app-step-nav__list-item js-list-item ">Income Support</li>
+                    <li class="app-step-nav__list-item js-list-item ">Industrial Injuries Disablement Benefit or equivalent benefits</li>
+                    <li class="app-step-nav__list-item js-list-item ">Jobseeker’s Allowance</li>
+                    <li class="app-step-nav__list-item js-list-item ">Maternity Allowance</li>
+                    <li class="app-step-nav__list-item js-list-item ">Pension Credit</li>
+                    <li class="app-step-nav__list-item js-list-item ">Personal Independence Payment (Daily Living component)</li>
+                    <li class="app-step-nav__list-item js-list-item ">Universal Credit</li>
+                    <li class="app-step-nav__list-item js-list-item ">Working Tax Credit</li>
+                  </ul>
+                  </p>
+                  <p>We may ask you to apply for benefits to which you are entitled but have not yet claimed.</p>
                 </div>
 
               </li>
@@ -132,29 +147,21 @@
                     </span>
 
                     <span class="js-step-title">
-                      Add up any income we don't count
+                      Take away allowances and discounts
                     </span>
                   </h2>
                 </div>
 
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-not-included-2">
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-atake-away-allowances-and-discounts-3">
                   <p class="app-step-nav__paragraph">There are some things we exclude, for example:</p>
-                  <ol class="app-step-nav__list " data-length="6">
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>Discounts and allowances</strong></p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£24.90 per week - Personal Expenses Allowance</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>£24.90 per week - Total Weekly Discounts and allowances</strong></p>
-                    </li>
-                  </ol>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li class="app-step-nav__list-item js-list-item ">Pension credit (savings credit)</li>
+                    <li class="app-step-nav__list-item js-list-item ">Attendance allowance</li>
+                    <li class="app-step-nav__list-item js-list-item ">Income Support +25%</li>
+                  </ul>
                 </div>
 
-              </li>
-
-              <li class="app-step-nav__step js-step" id="total-assessed-income" >
+              <li class="app-step-nav__step js-step" id="compare-contribution-amount-with-total-cost" >
                 <div class="app-step-nav__header js-toggle-panel" data-position="3">
                   <h2 class="app-step-nav__title">
                     <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -166,57 +173,22 @@
                     </span>
 
                     <span class="js-step-title">
-                      Calculate total income that can be used for contributions
-                    </span>
-                  </h2>
-                </div>
-
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-total-assessed-income-3">
-                  <p class="app-step-nav__paragraph">Take the total weekly discounts and allowances from the total weekly income.</p>
-
-                  <ol class="app-step-nav__list " data-length="3">
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>£127.15 per week - Total Weekly Income</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p>-£24.90 per week - Total Weekly Discounts and allowances</p>
-                    </li>
-                    <li class="app-step-nav__list-item js-list-item ">
-                      <p><strong>£102.25 per week - Weekly contribution</strong></p>
-                    </li>
-                  </ol>
-                </div>
-
-              </li>
-
-              <li class="app-step-nav__step js-step" id="compare-contribution-amount-with-total-cost" >
-                <div class="app-step-nav__header js-toggle-panel" data-position="5">
-                  <h2 class="app-step-nav__title">
-                    <span class="app-step-nav__circle app-step-nav__circle--number">
-                      <span class="app-step-nav__circle-inner">
-                        <span class="app-step-nav__circle-background">
-                          <span class="govuk-visually-hidden">Step</span> 4
-                        </span>
-                      </span>
-                    </span>
-
-                    <span class="js-step-title">
                       Compare the assessed income with the total cost of care
                     </span>
                   </h2>
                 </div>
 
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-compare-contribution-amount-with-total-cost-4">
-                  <p class="app-step-nav__paragraph">We then compare the total assessed income (£102.25), with the total cost of services (£483.00). Mrs. Smith would pay whichever amount is lower.</p>
-                  <p>She will pay <strong>£102.25 per week</strong>.</p>
+                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-compare-contribution-amount-with-total-cost-3">
+                  <p class="app-step-nav__paragraph">Your total income (1), less any of the things we exclude (2), is your Assessed Maximum Contribution.</p>
+                  <p class="app-step-nav__paragraph">You will not be asked to pay more than your Assessed Maximum Contribution. If the cost of your care is less than your Assessed Maximum Contribution, you will pay the lower amount.</p>
                 </div>
+
 
               </li>
 
 
             </ol>
           </div>
-
 
           <h2 class="govuk-heading-m">What happens next</h2>
           <p>If you are having, or have already had a Care Assessment and want to know exactly how much you will pay for services or you want to apply for financial support, you can use the BetterCare tool to complete a Financial Assessment.</p>
@@ -229,7 +201,15 @@
       </div>
 
     </div>
-  </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">Related information</h3>
+          <a href="/#" target="_blank">BetterCare Tool</a></br>
+          <a href="/#" target="_blank">Indicative care costs</a></br>
+          <a href="/#" target="_blank">GOV.UK</a></br>
+          <a href="/#" target="_blank">Independent financial advice</a></br>
+      </div>
+    </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <p class="govuk-body govuk-!-margin-bottom-9"></p>
@@ -240,6 +220,7 @@
       href: "https://forms.office.com/Pages/ResponsePage.aspx?id=7VVmWP8siUCBl7TBC3s9o3IJ7tcJddtNjuRoxI6nkllUN0tZTTdQWlRJRE1UQ1owMEE4NEtGS0swWiQlQCN0PWcu"
     })
   }}
+</div>
 </div>
 </div>
 {% endblock %}
