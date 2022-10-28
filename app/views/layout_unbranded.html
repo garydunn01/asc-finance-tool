@@ -8,10 +8,27 @@
   <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
   <!--[if gt IE 8]><!--><link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
 
+  {% include "includes/head.html" %}
   {% for stylesheetUrl in extensionConfig.stylesheets %}
     <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
   {% endfor %}
 {% endblock %}
 
 {% block header %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "https://govuk-prototype-kit.herokuapp.com/",
+        text: "GOV.UK Prototype Kit " + releaseVersion
+      },
+      {
+        href: "/prototype-admin/clear-data",
+        text: "Clear data"
+      }
+    ],
+    visuallyHiddenTitle: "Footer links"
+  }
+}) }}
+{% endblock %}
