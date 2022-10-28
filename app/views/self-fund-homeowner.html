@@ -27,7 +27,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/care-type">
               Change
-              <span class="govuk-visually-hidden"> name</span>
+              <span class="govuk-visually-hidden"> type of care</span>
             </a>
           </dd>
         </div>
@@ -42,6 +42,20 @@
             <a href="/property">
               Change
               <span class="govuk-visually-hidden"> amount of capital</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is your share of the property value worth more than £100,000?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['home-value'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/property-value">
+              Change
+              <span class="govuk-visually-hidden"> property value</span>
             </a>
           </dd>
         </div>
