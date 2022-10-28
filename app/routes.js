@@ -53,11 +53,26 @@ router.post('/care-type-answers', function (req, res) {
     var owners = req.session.data['home-ownership']
     // Check whether the variable matches a condition
     if (owners == "Yes"){
-      // Send user to self-fund-homeowner.html
-      res.redirect('/self-fund-homeowner')
+      // Send user to property-value.html
+      res.redirect('/property-value')
     } else if (owners == "No"){
       // Send user to /capital.html
       res.redirect('/capital')
     }
   })
+
+ // Run this code when a form is submitted to 'property-value-answers'
+ router.post('/property-value-answers', function (req, res) {
+
+  // Make a variable and give it the value from 'property'
+  var owners = req.session.data['home-value']
+  // Check whether the variable matches a condition
+  if (owners == "Yes"){
+    // Send user to self-fund-homeowner.html
+    res.redirect('/self-fund-homeowner')
+  } else if (owners == "No"){
+    // Send user to /capital.html
+    res.redirect('/capital')
+  }
+})
 module.exports = router

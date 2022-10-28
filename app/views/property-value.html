@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Property value</h1>
+
+      <form class="form" action="/property-value-answers" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+              idPrefix: "home-value",
+              name: "home-value",
+              fieldset: {
+                legend: {
+                  text: "Is your share of the property value worth more than £100,000?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("home-value", "yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("home-value", "no")
+                }
+              ]
+            }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
