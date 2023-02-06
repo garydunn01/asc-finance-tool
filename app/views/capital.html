@@ -14,81 +14,105 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">Savings and investments</h1>
-      <p>Your eligibility for financial support depends on how much capital you have. This is the total value of cash, savings and investments you hold.</p>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            What kind of savings are included?
-          </span>
-        </summary>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <p>The amount of help we might give toward care costs depends on the total value of cash, savings and investments held by the person who needs care.</p>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What what we mean by "savings"
+            </span>
+          </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Bank current accounts</li>
+                <li>Building society accounts</li>
+                <li>Deposit accounts or special investment accounts. This includes money held in the National Savings Bank, Girobank, and Trustee Savings Bank</li>
+                <li>ISAs</li>
+                <li>SAYE schemes</li>
+                <li>Unit trusts</li>
+                <li>Post Office Card Accounts (Watch this video for guidance on adding information about Post Office Card Accounts)</li>
+                <li>Co-operatives share accounts</li>
+                <li>Cash</li>
+              </ul>
+            </div>
+        </details>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What we mean by "investments"
+            </span>
+          </summary>
           <div class="govuk-details__text">
             <ul class="govuk-list govuk-list--bullet">
-              <li>Bank current accounts</li>
-              <li>Building society accounts</li>
-              <li>Deposit accounts or special investment accounts. This includes money held in the National Savings Bank, Girobank, and Trustee Savings Bank</li>
-              <li>ISAs</li>
-              <li>SAYE schemes</li>
-              <li>Unit trusts</li>
-              <li>Post Office Card Accounts (Watch this video for guidance on adding information about Post Office Card Accounts)</li>
-              <li>Co-operatives share accounts</li>
-              <li>Cash</li>
+              <li>National Savings Certificates and Ulster Savings Certificates</li>
+              <li>Premium Bonds</li>
+              <li>Stocks and Shares</li>
+              <li>Capital held by the Court of Protection or a Deputy appointed by that Court</li>
+              <li>Trust Funds</li>
             </ul>
           </div>
-      </details>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            What kind of investments are included?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>National Savings Certificates and Ulster Savings Certificates</li>
-            <li>Premium Bonds</li>
-            <li>Stocks and Shares</li>
-            <li>Capital held by the Court of Protection or a Deputy appointed by that Court</li>
-            <li>Trust Funds</li>
-          </ul>
-        </div>
-      </details>
+        </details>
       <form class="form" action="/capital-answers" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-{{ govukRadios({
-  idPrefix: "how-much-capital-do-you-have",
-  name: "how-much-capital-do-you-have",
-  fieldset: {
-    legend: {
-      text: "How much capital do you have?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "Between £0 and £20,000",
-      text: "Between £0 and £20,000",
-      checked: checked("how-much-capital-do-you-have", "Between £0 and £20,000")
-    },
-    {
-      value: "Between £20,000 and £100,000",
-      text: "Between £20,000 and £100,000",
-      checked: checked("how-much-capital-do-you-have", "Between £20,000 and £100,000")
-    },
-    {
-      value: "More than £100,000",
-      text: "More than £100,000",
-      checked: checked("how-much-capital-do-you-have", "More than £100,000")
-    }
-  ]
-}) }}
+          {{ govukRadios({
+            idPrefix: "how-much-capital-do-you-have",
+            name: "how-much-capital-do-you-have",
+            fieldset: {
+              legend: {
+                text: "What is the total value of cash, savings and investments?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "Held by the person needing care services"
+            },
+            items: [
+              {
+                value: "Between £0 and £14,250",
+                text: "Between £0 and £14,250",
+                checked: checked("how-much-capital-do-you-have", "Between £0 and £14,250")
+              },
+              {
+                value: "Between £14,250 and £23,250",
+                text: "Between £14,250 and £23,250",
+                checked: checked("how-much-capital-do-you-have", "Between £14,250 and £23,250")
+              },
+              {
+                value: "More than £23,250",
+                text: "More than £23,250",
+                checked: checked("how-much-capital-do-you-have", "More than £23,250")
+              }
+            ]
+          }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
-
     </div>
-  </div>
-
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">Related content</h3>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Care assessments</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Financial assessments</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Deferred payment scheme</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">More</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  
 {% endblock %}
