@@ -25,22 +25,22 @@ router.post('/care-type-answers', function (req, res) {
    var capital = req.session.data['how-much-capital-do-you-have']
    var type = req.session.data['what-type-of-care']
    // Check whether the variable matches a condition
-   if (capital == "More than £100,000" && type == "Care at home"){
+   if (capital == "More than £23,250" && type == "Care at home"){
      // Send user to self-fund.html
      res.redirect('/self-fund')
-   } else if (capital == "More than £100,000" && type != "Care at home" ){
+   } else if (capital == "More than £23,250" && type != "Care at home" ){
      // Send user to /self-fund-residential.html
      res.redirect('/self-fund-residential')
-   } else if (capital == "Between £20,000 and £100,000" && type == "Care at home" ){
+   } else if (capital == "Between £14,250 and £23,250" && type == "Care at home" ){
      // Send user to tariff-income.html
      res.redirect('/tariff-income')
-   } else if (capital == "Between £20,000 and £100,000" && type != "Care at home" ){
+   } else if (capital == "Between £14,250 and £23,250" && type != "Care at home" ){
      // Send user to tariff-income-no-housing.html
      res.redirect('/tariff-income-no-housing')
-   } else if (capital == "Between £0 and £20,000" && type == "Care at home" ){
+   } else if (capital == "Between £0 and £14,250" && type == "Care at home" ){
      // Send user to financial-support.html
      res.redirect('/financial-support')
-   } else if (capital == "Between £0 and £20,000" && type != "Care at home" ){
+   } else if (capital == "Between £0 and £14,250" && type != "Care at home" ){
      // Send user to financial-support-no-housing.html
      res.redirect('/financial-support-no-housing')
    }
