@@ -27,35 +27,21 @@
           <dd class="govuk-summary-list__actions">
             <a href="/care-type">
               Change
-              <span class="govuk-visually-hidden"> type of care</span>
+              <span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Do you own your own home?
+            How much capital do you have?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['home-ownership'] }}
+            {{ data['how-much-capital-do-you-have'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/property">
+            <a href="/capital">
               Change
               <span class="govuk-visually-hidden"> amount of capital</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Is your share of the property value worth more than £100,000?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['home-value'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/property-value">
-              Change
-              <span class="govuk-visually-hidden"> property value</span>
             </a>
           </dd>
         </div>
@@ -65,16 +51,16 @@
         <div class="govuk-grid-column-full">
 
           <div class="govuk-panel govuk-panel--confirmation">
-            <h1 class="govuk-panel__title">Not eligible*</h1>
+            <h1 class="govuk-panel__title">Not eligible</h1>
             <div class="govuk-panel__body">
               You will have to pay the full costs of your care
             </div>
           </div>
-          <p>* Based on the assumption that your home, or your share of it's value is worth more than £100,000.</p>
+
           <h2 class="govuk-heading-m">What happens next</h2>
             <p>As a self-funder of care services, you are free to make any arrangements you choose and pay the providers directly.</p>
             <p>If you would like to get some assistance in finding suitable service providers, please contact the Adult Services Access Team on 01724 297000.</p>
-            <p>When your savings and investments reduce to less than £100,000 you will qualify for financial support. To apply for financial support you will need to complete a Financial Assessment form. We recommend you apply slightly before your capital falls below £100,000 to allow time for your application to be processed.</p>
+            <p>When your savings and investments reduce to less than £100,000 you may qualify for financial support. To apply for financial support you will need to contact the Adult Services Access Team to request a Care Assessment, you will also need to complete a Financial Assessment form. We recommend you apply slightly before your capital falls below £100,000 to allow time for your application to be processed.</p>
             {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
               {{ govukWarningText({
                   text: "Deprivation of capital or assets",
@@ -83,31 +69,18 @@
             <p>If you give away large sums of your savings to friends or relatives, or transfer your assets (e.g. your property) to put yourself in a more favourable position to get local authority funding for your care and support services, the local authority may be able to financially assess you as if you still have the savings or assets.</p>
             <p>Statutory guidance allows the local authority to consider whether you have deprived yourself of a capital asset in order to either reduce your care and support costs, or approach the local authority for funding. If deprivation has occurred, the local authority will treat you as still possessing the capital asset. This is called Notional Capital.</p>
             <a href="https://www.ageuk.org.uk/information-advice/care/paying-for-care/paying-for-a-care-home/deprivation-of-assets/" target="blank">AgeUK Deprivation of Assets guidance</a>
+          </div>
         </div>
+
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">Related information</h3>
+          <a href="/#" target="_blank">BetterCare Tool</a></br>
+          <a href="/#" target="_blank">Indicative care costs</a></br>
+          <a href="/#" target="_blank">GOV.UK</a></br>
+          <a href="/#" target="_blank">Independent financial advice</a></br>
       </div>
-
     </div>
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h3 class="govuk-heading-m">Related information</h3>
-        <a href="/#" target="_blank">BetterCare Tool</a></br>
-        <a href="/#" target="_blank">Indicative care costs</a></br>
-        <a href="/#" target="_blank">GOV.UK</a></br>
-        <a href="/#" target="_blank">Independent financial advice</a></br>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <p class="govuk-body govuk-!-margin-bottom-9"></p>
-      <p class="govuk-body govuk-!-margin-bottom-5">Thanks! This is the end of the prototype tool. Please let us know what you think about it.</p>
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-    {{ govukButton({
-      text: "Go to feedback form",
-      href: "https://forms.office.com/Pages/ResponsePage.aspx?id=7VVmWP8siUCBl7TBC3s9o3IJ7tcJddtNjuRoxI6nkllUN0tZTTdQWlRJRE1UQ1owMEE4NEtGS0swWiQlQCN0PWcu"
-    })
-  }}
-</div>
-</div>
 </div>
 {% endblock %}

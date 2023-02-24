@@ -5,12 +5,6 @@
 {% endblock %}
 
 {% block pageScripts %}
-  <script src="/public/javascripts/step-by-step-nav.js"></script>
-  <script type="text/javascript">
-    var $element = $('#step-by-step-navigation')
-    var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
-    stepByStepNavigation.start($element)
-  </script>
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,9 +15,32 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Eligibility for financial support</h1>
-
-      <h2 class="govuk-heading-m">Check your answers</h2>
+      <h1 class="govuk-heading-xl">We can help you pay for your care</h1>
+      <p class="govuk-body-l">Based on your answers, you could get help from the council with paying for your care.</p>
+      <div class="govuk-inset-text">An exception to this is if you have complex health needs or you need primary health care, rather than social care. You may be eligible for NHS funded care.</div>
+      <p class="govuk-body">Depending on how much your care will cost, you will have to pay for some or all of your care.</p>
+      <p class="govuk-body">The amount you pay is assessed through a "financial assessment" that will show how much of your <strong>income</strong> you can afford to contribute.</p>
+      <p class="govuk-body">If the cost of your care is less than your assessed contribution, you will pay for all of it. If the cost is more than your assessed contribution, the council will pay the difference.</p>
+  
+        <h2 class="govuk-heading-m">What next?</h2>
+        <p class="govuk-body">There are a few things you could do next:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a class="govuk-link" href="#">I want to speak to someone about arranging care services</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">I care for someone and want to know about Carers Allowance</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">I want to know exactly how much I could pay for care services</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">I want to know if I will have to sell the house</a>
+          </li>
+        </ul>
+      </br>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-m">Change your answers</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -36,7 +53,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="/care-type">
               Change
-              <span class="govuk-visually-hidden"> name</span>
+              <span class="govuk-visually-hidden"> care needed</span>
             </a>
           </dd>
         </div>
@@ -48,170 +65,46 @@
               {{ data['how-much-capital-do-you-have'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="/capital">
+              <a href="/capital-care-at-home">
                 Change
                 <span class="govuk-visually-hidden"> amount of capital</span>
               </a>
             </dd>
-          </div>
+        </div>
       </dl>
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-
-          <div class="govuk-panel govuk-panel--confirmation">
-            <h1 class="govuk-panel__title">Eligible for financial support</h1>
-            <div class="govuk-panel__body">
-              You will have to pay a contribution to the cost of your care, but only from your income
-            </div>
-          </div>
-          <h2 class="govuk-heading-m">How do we work out how much your contribution will be?</h2>
-          <p>As a general overview, we follow a 3 step process:</p>
-
-          <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
-            <ol class="app-step-nav__steps">
-              <li class="app-step-nav__step js-step" id="add-income-together" >
-                <div class="app-step-nav__header js-toggle-panel" data-position="1">
-                  <h2 class="app-step-nav__title">
-                    <span class="app-step-nav__circle app-step-nav__circle--number">
-                      <span class="app-step-nav__circle-inner">
-                        <span class="app-step-nav__circle-background">
-                          <span class="govuk-visually-hidden">Step</span> 1
-                        </span>
-                      </span>
-                    </span>
-
-                    <span class="js-step-title">
-                      Add together all of your different income
-                    </span>
-                  </h2>
-                </div>
-
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-add-income-not-included-2">
-                  <p class="app-step-nav__paragraph">Many people only have one source of income, such as their State Pension, but if you have other sources of income we will take them into account.</p>
-                  <p>These may include:
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li class="app-step-nav__list-item js-list-item ">state pension</li>
-                    <li class="app-step-nav__list-item js-list-item ">wages/salary</li>
-                    <li class="app-step-nav__list-item js-list-item ">private/work pensions</li>
-                    <li class="app-step-nav__list-item js-list-item ">rental income from tenants and boarders</li>
-                    <li class="app-step-nav__list-item js-list-item ">maintenance payments from a spouse/partner</li>
-                  </ul>
-                  </p>
-                  <p>Income from benefits is usually included:
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li class="app-step-nav__list-item js-list-item ">Attendance Allowance, including Constant Attendance Allowance and Exceptionally Severe Disablement Allowance</li>
-                    <li class="app-step-nav__list-item js-list-item ">Bereavement Support Payment (has replaced Bereavement Allowance, previously Widow’s Pension)</li>
-                    <li class="app-step-nav__list-item js-list-item ">Carer's Allowance</li>
-                    <li class="app-step-nav__list-item js-list-item ">Child Tax Credit</li>
-                    <li class="app-step-nav__list-item js-list-item ">Child Benefit</li>
-                    <li class="app-step-nav__list-item js-list-item ">Disability Living Allowance (Care component)</li>
-                    <li class="app-step-nav__list-item js-list-item ">Employment and Support Allowance, or the benefits this replaces such as Severe Disablement Allowance and Incapacity Benefit</li>
-                    <li class="app-step-nav__list-item js-list-item ">Income Support</li>
-                    <li class="app-step-nav__list-item js-list-item ">Industrial Injuries Disablement Benefit or equivalent benefits</li>
-                    <li class="app-step-nav__list-item js-list-item ">Jobseeker’s Allowance</li>
-                    <li class="app-step-nav__list-item js-list-item ">Maternity Allowance</li>
-                    <li class="app-step-nav__list-item js-list-item ">Pension Credit</li>
-                    <li class="app-step-nav__list-item js-list-item ">Personal Independence Payment (Daily Living component)</li>
-                    <li class="app-step-nav__list-item js-list-item ">Personal Independence Payment (Mobility component)</li>
-                    <li class="app-step-nav__list-item js-list-item ">Universal Credit</li>
-                    <li class="app-step-nav__list-item js-list-item ">Working Tax Credit</li>
-                  </ul>
-                  </p>
-                  <p>We may ask you to apply for benefits to which you are entitled but have not yet claimed.</p>
-                </div>
-
-              </li>
-
-              <li class="app-step-nav__step js-step" id="add-income-not-included" >
-                <div class="app-step-nav__header js-toggle-panel" data-position="2">
-                  <h2 class="app-step-nav__title">
-                    <span class="app-step-nav__circle app-step-nav__circle--number">
-                      <span class="app-step-nav__circle-inner">
-                        <span class="app-step-nav__circle-background">
-                          <span class="govuk-visually-hidden">Step</span> 2
-                        </span>
-                      </span>
-                    </span>
-
-                    <span class="js-step-title">
-                      Take away allowances and discounts
-                    </span>
-                  </h2>
-                </div>
-
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-atake-away-allowances-and-discounts-3">
-                  <p class="app-step-nav__paragraph">There are some things we exclude, for example:</p>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li class="app-step-nav__list-item js-list-item ">Pension credit (savings credit)</li>
-                    <li class="app-step-nav__list-item js-list-item ">Attendance allowance</li>
-                    <li class="app-step-nav__list-item js-list-item ">Disability related expenditure (Such as alarm services, disability equipment, extra heating costs, additional laundry/bedding and other costs)</li>
-                    <li class="app-step-nav__list-item js-list-item ">Household Expenditure Costs (Such as, rent, mortgage, Council Tax, service charges, buildings insurance, water rates and sewerage, compulsory court payments)</li>
-                  </ul>
-                </div>
-
-              <li class="app-step-nav__step js-step" id="compare-contribution-amount-with-total-cost" >
-                <div class="app-step-nav__header js-toggle-panel" data-position="3">
-                  <h2 class="app-step-nav__title">
-                    <span class="app-step-nav__circle app-step-nav__circle--number">
-                      <span class="app-step-nav__circle-inner">
-                        <span class="app-step-nav__circle-background">
-                          <span class="govuk-visually-hidden">Step</span> 3
-                        </span>
-                      </span>
-                    </span>
-
-                    <span class="js-step-title">
-                      Compare the assessed income with the total cost of care
-                    </span>
-                  </h2>
-                </div>
-
-                <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-compare-contribution-amount-with-total-cost-3">
-                  <p class="app-step-nav__paragraph">Your total income (1), less any of the things we exclude (2), is your Assessed Maximum Contribution.</p>
-                  <p class="app-step-nav__paragraph">You will not be asked to pay more than your Assessed Maximum Contribution. If the cost of your care is less than your Assessed Maximum Contribution, you will pay the lower amount.</p>
-                </div>
-
-
-              </li>
-
-
-            </ol>
-          </div>
-
-
-          <h2 class="govuk-heading-m">What happens next</h2>
-          <p>If you are having, or have already had a Care Assessment and want to know exactly how much you will pay for services or you want to apply for financial support, you can use the BetterCare tool to complete a Financial Assessment.</p>
-          <p>
-              <a href="https://northlincs.bettercare.org.uk/" target="_blank">Go to the BetterCare Tool</a>
-          </p>
-
-
-        </div>
-      </div>
-
     </div>
-    <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-m">Related information</h3>
-          <a href="/#" target="_blank">BetterCare Tool</a></br>
-          <a href="/#" target="_blank">Indicative care costs</a></br>
-          <a href="/#" target="_blank">GOV.UK</a></br>
-          <a href="/#" target="_blank">Independent financial advice</a></br>
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Related content
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-!-font-size-16">
+              <li>
+                <a href="#">
+                  Care Assessments
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Financial Assessments
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Deferred Payment Scheme
+                </a>
+              </li>
+              <li>
+                <a href="#" class="govuk-!-font-weight-bold">
+                  More <span class="govuk-visually-hidden">in Subsection</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
       </div>
-    </div>
+</div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <p class="govuk-body govuk-!-margin-bottom-9"></p>
-      <p class="govuk-body govuk-!-margin-bottom-5">Thanks! This is the end of the prototype tool. Please let us know what you think about it.</p>
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-    {{ govukButton({
-      text: "Go to feedback form",
-      href: "https://forms.office.com/Pages/ResponsePage.aspx?id=7VVmWP8siUCBl7TBC3s9o3IJ7tcJddtNjuRoxI6nkllUN0tZTTdQWlRJRE1UQ1owMEE4NEtGS0swWiQlQCN0PWcu"
-    })
-  }}
-</div>
-</div>
-</div>
 {% endblock %}

@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">Property ownership</h1>
-
+      <p class="govuk-body">When care services are to be provided in a residential or nursing home, if you own, or part-own the property you live in it is included as an asset or investment.</p>
       <form class="form" action="/property-answers" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -24,7 +24,7 @@
               name: "home-ownership",
               fieldset: {
                 legend: {
-                  text: "Do you own your home?",
+                  text: "Does the person needing care own, or part-own their home?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--l"
                 }
@@ -33,12 +33,12 @@
                 {
                   value: "Yes",
                   text: "Yes",
-                  checked: checked("home-ownership", "yes")
+                  checked: checked("home-ownership", "Yes")
                 },
                 {
                   value: "No",
                   text: "No",
-                  checked: checked("home-ownership", "no")
+                  checked: checked("home-ownership", "No")
                 }
               ]
             }) }}
@@ -47,6 +47,37 @@
 
       </form>
 
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Care Assessments
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Financial Assessments
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Deferred Payment Scheme
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
     </div>
   </div>
 

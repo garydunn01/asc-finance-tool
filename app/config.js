@@ -4,7 +4,7 @@
 
 module.exports = {
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: 'Check what help you could get with paying for Adult Social Care',
+  serviceName: 'Check if you could get help paying for Adult Social Care',
 
   // Default port that prototype runs on
   port: '3000',
@@ -25,7 +25,10 @@ module.exports = {
   // Force HTTP to redirect to HTTPS on production
   useHttps: 'true',
 
-  // Enable or disable Browser Sync
-  useBrowserSync: 'true'
+  // Enable or disable Browser Sync  
+  useBrowserSync: 'true',
+
+// Enable logging, options: true, false, get or post  
+  useLogging: 'true'
 
 }
